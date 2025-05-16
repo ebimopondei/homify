@@ -1,12 +1,14 @@
 import Image from "next/image"
-import { ChevronDown, ChevronLeft, ChevronRight, MapPin, Search } from "lucide-react"
+import { Bed, ChevronDown, ChevronLeft, ChevronRight, DoorClosed, Info, Key, MapPin, Rotate3D, Search, Shield, Sun, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { JSX } from "react"
 
 export default function HomePage() {
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen px-6 md:px-16">
       
 
       {/* Main Banner */}
@@ -18,7 +20,7 @@ export default function HomePage() {
 
       {/* Filter Section */}
       <div className="bg-white py-4 border-b">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-6 h-6 flex items-center justify-center bg-blue-100 rounded-full">
               <span className="text-blue-500 text-sm">🔍</span>
@@ -151,18 +153,11 @@ export default function HomePage() {
 
       {/* Main Content */}
       <div className="flex-1 bg-gray-50 py-6">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Property Listings */}
             <div className="lg:col-span-3 space-y-6">
-              <PropertyCard verified={true} image="/images/property1.png" />
-              <PropertyCard verified={false} image="/images/property2.png" />
-              <PropertyCard verified={false} image="/images/property3.png" />
-              <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-400 text-2xl font-light">
-                Ads
-              </div>
-              <PropertyCard verified={false} image="/images/property4.png" />
-              <PropertyCard verified={true} image="/images/property5.png" />
+              {properties.map( (props, i) => <PropertyCard key={i} {...props} />)}
 
               {/* Pagination */}
               <div className="flex justify-center items-center space-x-2 py-4">
@@ -340,10 +335,117 @@ export default function HomePage() {
   )
 }
 
-function PropertyCard({ verified = false, image = "/placeholder.svg" }) {
+interface propertiesType {
+    title: string;
+    image: string;
+    verified: boolean;
+    subtitle: string;
+    location: string;
+    description: string;
+    cost: string;
+    company: string;
+    createdAt: string;
+    specs: {
+        bedrooms?: number;
+        selfContain?: boolean;
+        light?: boolean;
+        accessibleRoad?: boolean,
+        maxRoommates?: number | null,
+        fenced?: boolean,
+        gated?: boolean,
+        moreInfo?: string,
+    };
+}
+
+interface specIcons {
+    bedrooms: JSX.Element;
+    selfContain: JSX.Element;
+    light: JSX.Element;
+    accessibleRoad: JSX.Element;
+    maxRoommates: JSX.Element;
+    fenced: JSX.Element;
+    gated: JSX.Element;
+    moreInfo: JSX.Element;
+}
+
+const specIcons = {
+  bedrooms: Bed,
+  selfContain: DoorClosed, // You might need a more specific icon
+  light: Sun,
+  accessibleRoad: Rotate3D,
+  maxRoommates: Users,
+  fenced: Shield,
+  gated: Key,
+  moreInfo: Info,
+};
+
+const properties: propertiesType[] = [
+  {
+    title: 'Grand Two Bedroom Mansion',
+    verified: true,
+    subtitle: '2 Bedroom flat',
+    image: '/images/property1.png',
+    location: 'Lagos, Ikeja',
+    description: '2 Bedroom flat, with 3 bathroom in a 102 sqm. All fenced in a good environment with good roads.',
+    cost: '45,000,000',
+    company: "Jonnuel Housing Int'l",
+    createdAt: '13 Sept, 2022',
+    specs: {
+      bedrooms: 2,
+      selfContain: false,
+      // light: true,
+      // accessibleRoad: true,
+      // maxRoommates: null, // or a number if applicable
+      // fenced: true,
+      // gated: true,
+    },
+  },
+  {
+    title: 'Cozy Self-Contain Apartment',
+    verified: false,
+    subtitle: 'Single Room Self-Contain',
+    image: '/images/property2.png',
+    location: 'Yenagoa, Opolo',
+    description: 'A comfortable self-contain with steady light and a tarred road.',
+    cost: '15,000,000',
+    company: 'Bayelsa Rentals',
+    createdAt: '28 Oct, 2023',
+    specs: {
+      selfContain: true,
+      bedrooms: 1, // Could be 1 for a self-contain
+      // light: true,
+      // accessibleRoad: true,
+      // maxRoommates: 1,
+      // fenced: false,
+      gated: false,
+    },
+  },
+  {
+    title: 'Spacious Three Bedroom House',
+    verified: true,
+    subtitle: '3 Bedroom Bungalow',
+    image: '/images/property3.png',
+    location: 'Abuja, Gwarimpa',
+    description: 'A large 3 bedroom bungalow in a gated estate.',
+    cost: '80,000,000',
+    company: 'Prime Properties Ltd.',
+    createdAt: '5 Jan, 2024',
+    specs: {
+      // bedrooms: 3,
+      // selfContain: false,
+      // light: true,
+      accessibleRoad: true,
+      maxRoommates: null,
+      fenced: true,
+      gated: true,
+    },
+  },
+];
+
+function PropertyCard({ verified = false, image = "/placeholder.svg", ...props }:propertiesType) {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      <h3 className="text-lg font-medium p-4 border-b">Grand Two Bedroom Mansion</h3>
+      <h3 className="text-lg font-medium p-4 border-b">{props.title}</h3>
       <div className="grid md:grid-cols-2 gap-4 p-4">
         <div className="relative">
           {verified && (
@@ -358,9 +460,9 @@ function PropertyCard({ verified = false, image = "/placeholder.svg" }) {
           />
         </div>
         <div>
-          <h4 className="text-blue-600 font-medium">2 Bedroom flat</h4>
+          <h4 className="text-blue-600 font-medium">{props.subtitle}</h4>
           <div className="flex items-center text-sm text-gray-600 mb-2">
-            <MapPin className="h-4 w-4 mr-1" /> Lagos, Nigeria
+            <MapPin className="h-4 w-4 mr-1" /> {props.location}
           </div>
 
           <h5 className="font-medium text-sm mt-4 mb-1">Property Description</h5>
@@ -381,8 +483,28 @@ function PropertyCard({ verified = false, image = "/placeholder.svg" }) {
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 px-4 py-2 grid grid-cols-3 text-sm">
-        <div className="flex items-center">
+      <div className="bg-gray-100 px-4 py-2 flex items-center gap-8 text-sm">
+        {Object.keys(props.specs).map((key) => {
+          const value = props.specs[key as keyof typeof props.specs];
+          const Icon = specIcons[key as keyof typeof props.specs];
+
+          // Decide how to display based on the value type
+          let displayValue = value;
+          if (typeof value === 'boolean') {
+            displayValue = value ? '' : '';
+          } else if (value === null) {
+            return null; // Don't display if not applicable
+          }
+
+          return (
+            <div key={key} className="spec-item flex gap-2 items-center">
+              {Icon && <Icon size={14} />}
+              <span className="text-xs">{displayValue} {key}</span>
+            </div>
+          );
+        })}
+
+        {/* <div className="flex items-center">
           <span className="w-4 h-4 bg-gray-300 rounded-full mr-2"></span>2 Bedrooms
         </div>
         <div className="flex items-center">
@@ -390,7 +512,7 @@ function PropertyCard({ verified = false, image = "/placeholder.svg" }) {
         </div>
         <div className="flex items-center">
           <span className="w-4 h-4 bg-gray-300 rounded-full mr-2"></span>4 Car space
-        </div>
+        </div> */}
       </div>
     </div>
   )
