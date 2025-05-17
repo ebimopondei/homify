@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Rubik } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Rubik } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +9,10 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 
+
+const montserrat = Montserrat( {
+  subsets: ["latin"],
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,14 +40,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.className}  antialiased relative`}
       >
         {/* Header */}
         <header className="bg-blue-3000 shadow-sm">
           <div className="container mx-auto px-6 md:px-16 py-3 md:py-5 flex items-center justify-between">
             <div className="flex items-center justify-between gap-8 w-full">
               <div>
-                <Image src="/logo.svg" alt="Homely Buy Logo" width={40} height={40} />
+                <Image src="/logo.png" alt="Homely Buy Logo" width={40} height={40} />
               </div>
               <nav className="hidden md:flex items-center space-x-6">
                 <a href="#" className="text-blue-600 font-medium">

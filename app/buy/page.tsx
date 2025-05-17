@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { JSX } from "react"
+import FilterForm from "@/components/filter-form"
 
-export default function HomePage() {
+export default function BuyPage() {
 
   return (
     <div className="flex flex-col min-h-screen px-6 md:px-16">
@@ -19,137 +20,8 @@ export default function HomePage() {
       </div> */}
 
       {/* Filter Section */}
-      <div className="bg-white py-4 border-b">
-        <div className="container mx-auto">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-6 flex items-center justify-center bg-blue-100 rounded-full">
-              <span className="text-blue-500 text-sm">🔍</span>
-            </div>
-            <h2 className="text-gray-700 font-medium">Property Filter</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
-              <Input placeholder="e.g Lagos, Abuja..." className="w-full" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="flat">Flat</SelectItem>
-                  <SelectItem value="house">House</SelectItem>
-                  <SelectItem value="land">Land</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Keyword</label>
-              <Input placeholder="e.g hotel or estate" className="w-full" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-7 gap-2 mb-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Min Price</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No min" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1000000">₦1,000,000</SelectItem>
-                  <SelectItem value="5000000">₦5,000,000</SelectItem>
-                  <SelectItem value="10000000">₦10,000,000</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="50000000">₦50,000,000</SelectItem>
-                  <SelectItem value="100000000">₦100,000,000</SelectItem>
-                  <SelectItem value="200000000">₦200,000,000</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1">1</SelectItem>
-                  <SelectItem value="2">2</SelectItem>
-                  <SelectItem value="3">3+</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Furnishing</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="furnished">Furnished</SelectItem>
-                  <SelectItem value="unfurnished">Unfurnished</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Servicing</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="serviced">Serviced</SelectItem>
-                  <SelectItem value="unserviced">Unserviced</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Shared</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="yes">Yes</SelectItem>
-                  <SelectItem value="no">No</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Type</label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="No max" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="flat">Flat</SelectItem>
-                  <SelectItem value="house">House</SelectItem>
-                  <SelectItem value="land">Land</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-
-          <div className="flex justify-end">
-            <Button className="bg-blue-500 hover:bg-blue-600">
-              <Search className="mr-2 h-4 w-4" /> Search
-            </Button>
-          </div>
-        </div>
-      </div>
+      <FilterForm />
+      
 
       {/* Main Content */}
       <div className="flex-1 bg-gray-50 py-6">
