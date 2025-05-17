@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat, Rubik } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Image from "next/image";
-import logo from '../public/images/logo.png'
-import menuItem from '../data/db'
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -13,16 +10,6 @@ import { ChevronDown } from "lucide-react";
 const montserrat = Montserrat( {
   subsets: ["latin"],
 })
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,7 +30,7 @@ export default function RootLayout({
         className={`${montserrat.className}  antialiased relative`}
       >
         {/* Header */}
-        <header className="bg-blue-3000 shadow-sm">
+        <header className="bg-blue-1000 shadow-sm">
           <div className="container mx-auto px-6 md:px-16 py-3 md:py-5 flex items-center justify-between">
             <div className="flex items-center justify-between gap-8 w-full">
               <div>
