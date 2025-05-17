@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 interface features {
@@ -11,7 +12,7 @@ interface features {
 const FeatureCard = (item: features) => {
   return (
     <div className='basis-3/12 bg-white rounded-lg max-w-[374px]'>
-        <img  src={item.img} alt="text"  />
+        <Image  src={item.img} alt="text"  />
 
         <div className='p-4'>
             <h3 className='text-center font-medium'>{item.lead}</h3>

@@ -2,51 +2,14 @@
 'use client'
 import Features from "@/components/feature";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import Navigate from "@/sections/navigate";
 import OurStory from "@/sections/our-story";
 import Partners from "@/sections/partners";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LocateFixedIcon, Users } from "lucide-react";
-import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 export default function Home() {
 
-  const formSchema = z.object(
-      {
-          location: z.string().min(3, {
-              message: "Location must be at least 2 characters.",
-          }),
-          max: z.number().optional(),
-          type: z.enum(["flat", "house", "land", ""],).optional(),
-          
-      }
-  );
-  
-  // Define the form type based on the schema
-  type FormData = z.infer<typeof formSchema>;
-  
-  // Create the form using React Hook Form
-  const useMyForm = () => { // Changed to useMyForm to avoid naming conflicts.  This is a factory.
-      const form = useForm<FormData>({
-          resolver: zodResolver(formSchema),
-          defaultValues: {
-              location: ""
-          },
-      });
-      return form;
-  }
 
-  const form = useMyForm()
-  
-  function onSubmit(values: FormData) {
-      // Do something with the form values.
-      // ✅ This will be type-safe and validated.
-      console.log(values);
-  }
+
 
   return (
     <div className='p-4 text-black md:bg-[url("/images/new-hero-landing.png")] h-[89dvh] bg-[center_-450px] bg-no-repeat md:bg-cover md:bg-center '>

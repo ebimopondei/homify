@@ -1,6 +1,7 @@
 import React from 'react'
 import FeatureCard from './feature-card'
 import { FeaturesType } from '@/app/types'
+import Image from 'next/image'
 
 
 
@@ -20,18 +21,18 @@ const Features = () => {
             <section className='flex flex-col md:flex-row justify-around mt-10 md:mt-60'>
             <div className='basis-full md:basis-5/12 flex justify-center md:justify-start items-start  gap-6'>
                 <div className='hidden flex flex-col gap-4'>
-                <img src='/images/Frame 372.png' />
-                <img src='/images/Rectangle 99.png' />
+                <Image alt='' src='/images/Frame 372.png' />
+                <Image alt='' src='/images/Rectangle 99.png' />
                 </div>
 
                 <div className='flex flex-col justify-center items-center '>
-                <img src='/images/Rectangle 98.png' />
+                <Image alt='' src='/images/Rectangle 98.png' />
 
                 <div className='p-4'>
-                    <img src='/images/Group 97.png' />
+                    <Image alt='' src='/images/Group 97.png' />
 
                     <div className='mt-10 block m-auto w-56 '>
-                    <img src='/images/Group 43.png' />
+                    <Image alt='' src='/images/Group 43.png' />
                     <p><span className='font-bold'>15K</span> <span className='text-blue'>+ Positive Reviews</span></p>
                     </div>
                 </div>
@@ -55,7 +56,7 @@ const Features = () => {
                 <div className='flex flex-wrap justify-between'>
                     <div className='flex gap-4'>
                     <div className='bg-white p-2 rounded-lg border-solid border-2 border-blue'>
-                        <img src="/images/Group 2.png" />
+                        <Image alt='' src="/images/Group 2.png" />
                     </div>
 
                     <div>
@@ -66,7 +67,7 @@ const Features = () => {
                     
                     <div className='flex gap-4'>
                     <div className='bg-white p-2 rounded-lg border-solid border-2 border-blue'>
-                        <img src="/images/Mask Group.png" />
+                        <Image alt='' src="/images/Mask Group.png" />
                     </div>
 
                     <div>

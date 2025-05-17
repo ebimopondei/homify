@@ -77,7 +77,7 @@ export default function LoginForm() {
                                 
                 <Button className="w-full bg-blue-2000 rounded-2xl py-5" type="submit">Log In</Button>
                 <Button className="bg-grey-3000 text-black mx-auto py-5 w-full rounded-2xl my-3"><Instagram /> Sign up with Google</Button>
-                <p className="my-4 text-xs">Don't have an account? <Link href='/signup' className="text-blue-2000">Create one for free</Link> </p>
+                <p className="my-4 text-xs">Don&apos;t have an account? <Link href='/signup' className="text-blue-2000">Create one for free</Link> </p>
             </form>
         </Form>
     )

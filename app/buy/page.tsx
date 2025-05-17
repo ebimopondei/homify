@@ -1,8 +1,6 @@
 import Image from "next/image"
-import { Bed, ChevronDown, ChevronLeft, ChevronRight, DoorClosed, Info, Key, MapPin, Rotate3D, Search, Shield, Sun, Users } from "lucide-react"
+import { Bed, ChevronLeft, ChevronRight, DoorClosed, Info, Key, MapPin, Rotate3D, Shield, Sun, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { JSX } from "react"
 import FilterForm from "@/components/filter-form"
 
