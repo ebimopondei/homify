@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation'
 
 const API = () => {
      const router = useRouter();
-    const backendHost = "http://localhost:3000/api";
+    // const backendHost = "http://localhost:3000/api";
     // const backendHost = "http://10.0.12.7:3000/api";
     // const backendHost = "http://192.168.0.102:3000/api";
-    // const backendHost = "https://api.sammy.reneaureits.com/api"
+    const backendHost = "https://homify-nine.vercel.app/api"
 
     const { setToken, token, logoutAuth } = useAuth();
     const api = axios.create({ baseURL: backendHost });

@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/auth/signup
+POST https://homify-nine.vercel.app/api/auth/signup
 Content-Type: application/json
 
 {
