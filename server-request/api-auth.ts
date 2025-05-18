@@ -26,7 +26,7 @@ export default function ApiAuth (){
 
     const signUp= async (signUpData: signUpType ):Promise<SignupResponse> =>{
         try{
-            const res = await api.post(`/auth/signup`, { signUpData }
+            const res = await api.post(`/auth/signup`, { ...signUpData }
         );
             const data = res.data
             return data;

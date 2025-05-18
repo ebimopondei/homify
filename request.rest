@@ -1,7 +1,24 @@
+POST https://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "firstname": "Ebimobowei",
+    "email": "ebi4jah1555a@gmail.com",
+    "password": "qwerty"
+    
+}
+
+
+###
 POST https://homify-nine.vercel.app/api/auth/signup
 Content-Type: application/json
 
 {
+    "agreeToTerms": true,
+    "confirmPassword": "qwerty",
+    "firstname": "Ebimobowei",
+    "lastname": "Pondei",
+    "phone": "8105910313",
     "email": "ebi4jah1555@gmail.com",
     "password": "qwerty"
     
@@ -17,6 +34,16 @@ Content-Type: application/json
     "password": "qwerty"
 }
 
+
+###
+POST https://homify-nine.vercel.app/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "ebi4jah1555@gmail.com",
+    "password": "qwerty"
+    
+}
 
 
 ###
