@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import { loginUser, signupUser } from "../../database/queries";
 import { hashString } from "../../helpers";
 

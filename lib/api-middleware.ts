@@ -12,12 +12,12 @@ export class ApiError extends Error {
   }
 }
 
-type RouteHandler = (req: NextRequest, params?: any) => Promise<NextResponse> | NextResponse
+type RouteHandler = (req: NextRequest) => Promise<NextResponse> | NextResponse
 
 export function withErrorHandling(handler: RouteHandler): RouteHandler {
-  return async (req, params) => {
+  return async (req) => {
     try {
-      return await handler(req, params)
+      return await handler(req)
     } catch (error) {
       console.error("[API Error]:", error)
 
