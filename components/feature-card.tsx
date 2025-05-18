@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import { Button } from './ui/button';
 
 interface features {
     id: number;
@@ -12,12 +13,18 @@ interface features {
 const FeatureCard = (item: features) => {
   return (
     <div className='basis-3/12 bg-white rounded-lg max-w-[374px]'>
-        <Image  src={item.img} alt="text"  />
-
+        <div className="relative w-full h-55 md:h-69">
+          <Image
+            src={item.img}
+            alt=""
+            fill
+            className="object-fill"
+          />
+        </div>
         <div className='p-4'>
             <h3 className='text-center font-medium'>{item.lead}</h3>
-            <p className='text-xs text-justify'>{item.sub}</p>
-            <button className=' rounded-md mt-6 block m-auto bg-blue text-white px-4 py-2 '>{item.action}</button>
+            <p className='text-xs text-left my-3'>{item.sub}</p>
+            <Button className='mt- mb-3 '>{item.action}</Button>
         </div>
     </div>
   )

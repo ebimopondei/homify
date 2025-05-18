@@ -4,8 +4,8 @@ import Partner from '@/components/partners-item'
 
 const Partners = () => {
   return (
-    <section className='bg-partners_bg_img bg-cover'>
-        <div className='h-[832px]s p-3 md:p-10'>
+    <section className='-mx-4 bg-cover bg-[url("/images/partner_bg.png")] '>
+        <div className='h-[832px]s p-5 md:p-10'>
             <h2 className='text-5xl text-white'>Our Partners</h2>
 
             <div className='flex flex-col md:flex-row justify-center gap-10 my-10  '>
