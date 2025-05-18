@@ -1,1 +1,30 @@
-GET http://localhost:3000/api/users
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "email": "ebi4jdasdfah1daa55eaafcb@gmail.com",
+    "password": "qwerty"
+    
+}
+
+
+###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "ebfi4jah15@gmail.com",
+    "password": "qwerty"
+}
+
+
+
+###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "ebi4jah15@gmail.com",
+    "password": "qwerty"
+}
+

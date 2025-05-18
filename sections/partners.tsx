@@ -1,5 +1,5 @@
 import React from 'react'
-import { PartnerType } from '@/app/types'
+import { PartnerType } from '@/types'
 import Partner from '@/components/partners-item'
 
 const Partners = () => {

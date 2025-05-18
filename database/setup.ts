@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import { db, host, pass, user, } from '../config/postgres-db';
 import Verification from '../models/verification';
+import User from '@/models/user';
 
 
 async function initializeDatabase() {
@@ -12,7 +13,7 @@ async function initializeDatabase() {
         host: host,
         port: 5432,
         dialect: 'postgres',
-        models: [Verification],
+        models: [Verification, User],
         dialectModule: pg,
         logging: false,
     });

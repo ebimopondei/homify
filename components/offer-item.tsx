@@ -1,4 +1,4 @@
-import { OffersType } from '@/app/types'
+import { OffersType } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 

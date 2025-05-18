@@ -18,6 +18,10 @@ export interface OffersType {
     owner: string;
 }
 
+export type Props ={
+    children: React.ReactNode;
+}
+
 export interface PartnerType {
     lead: string;
     sub: string;

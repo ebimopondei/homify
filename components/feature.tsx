@@ -1,6 +1,6 @@
 import React from 'react'
 import FeatureCard from './feature-card'
-import { FeaturesType } from '@/app/types'
+import { FeaturesType } from '@/types'
 import Image from 'next/image'
 
 

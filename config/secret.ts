@@ -1,5 +1,5 @@
-const SECRET = process.env.accessTokenSecret;
-const REFRESHSECRET = process.env.refreshTokenSecret;
+const SECRET = process.env.accessTokenSecret || '';
+const REFRESHSECRET = process.env.refreshTokenSecret || '';
 
 
 export {

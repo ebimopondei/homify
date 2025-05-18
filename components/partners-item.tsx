@@ -1,4 +1,4 @@
-import { PartnerType } from '@/app/types'
+import { PartnerType } from '@/types'
 import React from 'react'
 
 const Partner = (item: PartnerType) => {

@@ -7,11 +7,36 @@ import { Button } from "./ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Checkbox } from "./ui/checkbox";
 import Link from "next/link";
+import ApiAuth from "@/server-request/api-auth";
+import { signUpType } from "@/types/signup";
+import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 
 export default function SignUpForm() {
 
-    const { onSubmit, form} = useSignup();
+    const router = useRouter();
+
+    const { form } = useSignup();
+
+    const { signUp } = ApiAuth();
+
+    async function onSubmit(values: signUpType) {
+        console.log(values);
+
+        const response = await signUp( values )
+
+        if(response.success){
+            toast.success(response.message)
+            setTimeout(()=>{
+                router.push('/login');
+            }, 2000
+        );
+        }else {
+            toast.error(response.message)
+        }
+
+    }
 
     const countryCodes = [
   { value: "+234", label: "Nigeria (+234)" },

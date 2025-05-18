@@ -1,4 +1,4 @@
-import { OffersType } from '@/app/types'
+import { OffersType } from '@/types'
 import OfferItem from '@/components/offer-item'
 import React from 'react'
 
